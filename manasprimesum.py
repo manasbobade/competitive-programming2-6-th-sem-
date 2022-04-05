@@ -19,6 +19,6 @@ b=[]
 for i in a:
     b.append(list(i))
 for i in b:
-    if i[0]+i[1]+i[2]+i[3]==123:
+    if i[0]+i[1]+i[2]+i[3]==number:
         print("\n\nsum of 4 primes for number=",number," is---",i[0]," ",i[1]," ",i[2]," ",i[3],"=",i[0]+i[1]+i[2]+i[3])
         break
