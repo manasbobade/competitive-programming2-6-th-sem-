@@ -1,3 +1,4 @@
+#   MANAS ANILRAO BOBADE   ROLL NO-39    TY-CSE(A)  CP-2
 no_of_bulbs=int(input("enter number of bulbs"))
 no_of_rounds=int(input("enter number of rounds"))
 to_check=int(input("enter the bulb number to check"))
