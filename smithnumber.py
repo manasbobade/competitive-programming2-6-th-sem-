@@ -19,11 +19,16 @@ for i in range(2,number+1):
 for i in list_of_primes:
     while True:
         if number%i==0:
-            factors.append(i)
+            for j in str(i):
+                factors.append(int(j))
             number=number/i
         else:
             break
 for i in factors:
     sum+=i
     
-print("factors=",factors," sum of factors=",sum," sum of digits=",sum_of_digits)    
+print("factors=",factors," sum of factors=",sum," sum of digits=",sum_of_digits)
+if sum_of_digits==sum:
+    print("It is a smith number")
+else:
+    print("It is not a smith number")
