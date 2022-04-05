@@ -1,3 +1,4 @@
+#   MANAS ANILRAO BOBADE   ROLL NO-39    TY-CSE(A)  CP-2
 from itertools import combinations
 number=int(input("enter the number"))
 list_of_primes=[]
