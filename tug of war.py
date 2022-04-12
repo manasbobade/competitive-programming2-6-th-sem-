@@ -1,3 +1,4 @@
+#39 MANAS BOBADE 
 import math
 from itertools import combinations
 #number_list=list(map(int,input("enter the numbers").split(" ")))
