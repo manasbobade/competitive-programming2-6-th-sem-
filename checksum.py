@@ -7,10 +7,6 @@ binarylist=[]
 count=0
 b=""
 for i in range(0,length):
-    if i==0:
-        b=b+a[i]
-        count+=1
-        continue
     if count==4:
         listofnumbers.append(b)
         b=""
