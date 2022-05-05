@@ -40,5 +40,24 @@ if len(sum)<16:
     a=""
     for i in range(0,16-len(sum)):
         a+="0"
-sum=a+sum     
-print(sum)
+sum=str(a+sum)     
+
+ans=[]
+count=0
+b=""
+for i in range(0,len(sum)):
+    if i==0:
+        b=b+sum[i]
+        count+=1
+        continue
+    if count==4:
+        ans.append(hex(int(b,2))[2:])
+        b=""
+        b=sum[i]
+        count=1
+    else:
+        b=b+sum[i]
+        count+=1
+ans.append(hex(int(b,2))[2:])
+print("checksum=",ans)
+    
