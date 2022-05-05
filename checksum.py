@@ -20,11 +20,25 @@ for i in range(0,length):
         b=b+a[i]
         count+=1
 listofnumbers.append(b)    
-print(a,listofnumbers)
 for i in listofnumbers:
     bin1=""
     for j in i:
         bin_value= "{0:04b}".format(int(j, 16))
         bin1+=bin_value
-    binarylist.append(bin1)
-print(binarylist)        
+    binarylist.append(str(bin1))
+sum = bin(int(binarylist[0], 2) + int(binarylist[1], 2)+ int(binarylist[2], 2)+ int(binarylist[3], 2))    
+sum=str(sum[2:])
+
+if len(sum)>16:
+    noofextrabits=len(sum)-16
+    extrabits=sum[0:noofextrabits]
+    sum=str(sum[noofextrabits:])
+    sum=bin(int(sum,2)+int(extrabits,2))
+    sum=sum[2:]
+
+if len(sum)<16:
+    a=""
+    for i in range(0,16-len(sum)):
+        a+="0"
+sum=a+sum     
+print(sum)
