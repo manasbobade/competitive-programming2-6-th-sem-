@@ -1,18 +1,21 @@
-l=[1,0,1,0,0,0,0,1,0,0,0]
-a=[0,0,0,1,0,0,0]
-b=[1,0,0,1]
-n=[1,0,1,0]
-length=len(b)
+divisor=list(map(int,input("enter the divisor").split(",")))
+divident=list(map(int,input("enter the divident").split(",")))
+n=[]
+for i in range(0,len(divisor)):
+    n.append(divident[0])
+    divident.remove(divident[0])
+length=len(divisor)
+
 while True:
     print("\n\n")
-    if len(a)==0:
+    if len(divident)==0:
         print("remainder=",m)
         break
     m=[]
     print("upper=",n)
-    print("lower=",b)
+    print("divisor=",divisor)
     for i in range(0,length):
-        m.append(n[0]^b[i])
+        m.append(n[0]^divisor[i])
         n.remove(n[0])    
     print("xor values=",m)
     delimiter=0
@@ -26,8 +29,8 @@ while True:
     difference=length-len(n)
     
     for i in range(0,difference):
-        n.append(a[0])
-        a.remove(a[0])
+        n.append(divident[0])
+        divident.remove(divident[0])
     print("new upper values with carries =",n)
     
     
