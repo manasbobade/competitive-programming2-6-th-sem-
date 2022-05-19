@@ -1,33 +1,37 @@
-a=[1,0,1,0,0,0,0,1,0,0,0]
+l=[1,0,1,0,0,0,0,1,0,0,0]
+a=[0,0,0,1,0,0,0]
 b=[1,0,0,1]
+n=[1,0,1,0]
 length=len(b)
-m=[]
-count=0
 while True:
+    print("\n\n")
+    if len(a)==0:
+        print("remainder=",m)
+        break
+    m=[]
+    print("upper=",n)
+    print("lower=",b)
     for i in range(0,length):
-        m.append(a[i])
-        a[i]=5
-        count+=1
-    for i in range(0,4):
-        m[i]=int(m[i])^int(b[i])
-    for i in range(0,4):
-        if m[i]==1:
+        m.append(n[0]^b[i])
+        n.remove(n[0])    
+    print("xor values=",m)
+    delimiter=0
+    for i in range(0,length):
+        if m[i]!=0:
+            delimiter=i
             break
-        else:
-            m[i]=5
-    j=[]
-    for i in m:
-        if i==5:
-            continue
-        j.append(i)
-    m.clear()    
-    for i in j:
-        m.append(i)
-    j.clear()    
-    print(m)
-    diff=4-len(m)
+    n=[]    
+    for i in range(delimiter,length):
+        n.append(m[i])
+    difference=length-len(n)
     
-    break
+    for i in range(0,difference):
+        n.append(a[0])
+        a.remove(a[0])
+    print("new upper values with carries =",n)
+    
+    
+        
         
 
 
