@@ -14,7 +14,7 @@ for i in range(2,number+1):
         list_of_primes.append(i)
 print("list of primes=",list_of_primes)
 
-a=combinations(list_of_primes,4)
+a=combinations_with_replacement(list_of_primes,4)
 b=[]
 for i in a:
     b.append(list(i))
