@@ -9,47 +9,51 @@ sizeofnetid=int(m[1])
 firstaddress=[]
 lastaddress=[]
 subnet=[]
-
-
+bool=True
 for i in a:
     b.append(format(int(i),"08b"))
+    if int(i)>255 or int(i)<0 or sizeofnetid>31:
+        bool=False
+        print("invalid address entered")
+        break
+    
+if bool:
+    count=0
+    for i in b:
+        a=""
+        for j in i:
+            count+=1
+            if count>sizeofnetid:
+                a+="0"
+            else:
+                a+="1"
+        subnet.append(a)
+    print("subnet address==",int(subnet[0],2),".",int(subnet[1],2),".",int(subnet[2],2),".",int(subnet[3],2))    
 
-count=0
-for i in b:
-    a=""
-    for j in i:
-        count+=1
-        if count>sizeofnetid:
-            a+="0"
-        else:
-            a+="1"
-    subnet.append(a)
-print("subnet address==",int(subnet[0],2),".",int(subnet[1],2),".",int(subnet[2],2),".",int(subnet[3],2))    
+    count=0
+    for i in b:
+        a=""
+        for j in i:
+            count+=1
+            if count>sizeofnetid:
+                a+="0"
+            else:
+                a+=str(j)
+        firstaddress.append(a)
 
-count=0
-for i in b:
-    a=""
-    for j in i:
-        count+=1
-        if count>sizeofnetid:
-            a+="0"
-        else:
-            a+=str(j)
-    firstaddress.append(a)
+    print("first address==",int(firstaddress[0],2),".",int(firstaddress[1],2),".",int(firstaddress[2],2),".",int(firstaddress[3],2))
 
-print("first address==",int(firstaddress[0],2),".",int(firstaddress[1],2),".",int(firstaddress[2],2),".",int(firstaddress[3],2))
+    count=0
+    for i in b:
+        a=""
+        for j in i:
+            count+=1
+            if count>sizeofnetid:
+                a+="1"
+            else:
+                a+=str(j)
+        lastaddress.append(a)
 
-count=0
-for i in b:
-    a=""
-    for j in i:
-        count+=1
-        if count>sizeofnetid:
-            a+="1"
-        else:
-            a+=str(j)
-    lastaddress.append(a)
-
-print("last address==",int(lastaddress[0],2),".",int(lastaddress[1],2),".",int(lastaddress[2],2),".",int(lastaddress[3],2))
+    print("last address==",int(lastaddress[0],2),".",int(lastaddress[1],2),".",int(lastaddress[2],2),".",int(lastaddress[3],2))
 
 
